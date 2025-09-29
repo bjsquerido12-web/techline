@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="facebook-domain-verification" content="drr3ty69ff0mc4gfbr2p5m7euvmtsp" />
+  <title>TECHLINE - Soluciones Tecnológicas Empresariales</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Exo 2', sans-serif;
+    }
+    
+    .orbitron {
+      font-family: 'Orbitron', monospace;
+    }
+
+    /* Modern Tech Theme */
+    .cyber-bg {
+      background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 25%, #2d3748 50%, #1a202c 75%, #000000 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cyber-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 50%, #3182ce22 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, #38a16922 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, #ed8936aa 0%, transparent 50%);
+      opacity: 0.6;
+      z-index: 1;
+    }
+    
+    .cyber-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Modern glow effects */
+    .neon-cyan {
+      color: #3182ce;
+      text-shadow: 0 0 10px #3182ce, 0 0 20px #3182ce, 0 0 30px #3182ce;
+    }
+    
+    .neon-pink {
+      color: #38a169;
+      text-shadow: 0 0 10px #38a169, 0 0 20px #38a169, 0 0 30px #38a169;
+    }
+    
+    .neon-yellow {
+      color: #ed8936;
+      text-shadow: 0 0 10px #ed8936, 0 0 20px #ed8936, 0 0 30px #ed8936;
+    }
+
+    /* Geometric shapes */
+    .diamond {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #3182ce, #38a169);
+      transform: rotate(45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .diamond-content {
+      transform: rotate(-45deg);
+    }
+
+    /* Tech cards */
+    .cyber-card {
+      background: linear-gradient(145deg, #1a202c, #2d3748);
+      border: 2px solid #3182ce;
+      box-shadow: 
+        0 0 20px rgba(49, 130, 206, 0.3),
+        inset 0 0 20px rgba(49, 130, 206, 0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cyber-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #3182ce, #38a169, #ed8936, #3182ce);
+      background-size: 400% 400%;
+      animation: neonBorder 3s ease infinite;
+      z-index: -1;
+      border-radius: inherit;
+    }
+    
+    .cyber-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(49, 130, 206, 0.4),
+        0 0 30px rgba(56, 161, 105, 0.3);
+      border-color: #38a169;
+    }
+
+    @keyframes neonBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Tech grid pattern */
+    .circuit-bg {
+      background-image: 
+        linear-gradient(90deg, #3182ce33 1px, transparent 1px),
+        linear-gradient(0deg, #3182ce33 1px, transparent 1px);
+      background-size: 50px 50px;
+      position: relative;
+    }
+    
+    .circuit-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, #38a16944 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, #ed893644 2px, transparent 2px);
+      background-size: 50px 50px;
+    }
+
+    /* Glitch effect */
+    .glitch {
+      position: relative;
+      animation: glitch 2s infinite;
+    }
+    
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    /* Pulse animation */
+    .pulse-neon {
+      animation: pulseNeon 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulseNeon {
+      0%, 100% { 
+        box-shadow: 0 0 20px #3182ce, 0 0 40px #3182ce;
+        border-color: #3182ce;
+      }
+      50% { 
+        box-shadow: 0 0 30px #38a169, 0 0 60px #38a169;
+        border-color: #38a169;
+      }
+    }
+
+    /* Sliding panels */
+    .slide-panel {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-left: 4px solid #3182ce;
+      transform: skewX(-5deg);
+      transition: all 0.3s ease;
+    }
+    
+    .slide-panel:hover {
+      transform: skewX(0deg) translateX(10px);
+      border-left-color: #38a169;
+    }
+    
+    .slide-content {
+      transform: skewX(5deg);
+    }
+
+    /* Matrix rain effect */
+    .matrix-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(49, 130, 206, 0.03) 100px
+      );
+      animation: matrixRain 20s linear infinite;
+    }
+    
+    @keyframes matrixRain {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #3182ce, #38a169);
+      border-radius: 4px;
+    }
+
+    /* WhatsApp button cyber style */
+    .whatsapp-cyber {
+      background: linear-gradient(135deg, #25d366, #128c7e, #3182ce);
+      animation: cyberpulse 2s infinite;
+      border: 2px solid #3182ce;
+      box-shadow: 0 0 20px rgba(49, 130, 206, 0.5);
+    }
+    
+    @keyframes cyberpulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(49, 130, 206, 0.5);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(56, 161, 105, 0.7);
+      }
+    }
+
+    /* Typewriter effect */
+    .typewriter {
+      overflow: hidden;
+      border-right: 3px solid #3182ce;
+      white-space: nowrap;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #3182ce; }
+    }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- MATRIX BACKGROUND EFFECT -->
+  <div class="matrix-bg fixed inset-0 pointer-events-none z-0"></div>
+
+  <!-- CYBER HEADER -->
+  <header class="cyber-bg min-h-screen flex items-center relative">
+    <div class="cyber-content w-full">
+      
+      <!-- Cyber Navigation -->
+      <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b-2 border-blue-500">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+          <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="diamond mr-4 pulse-neon">
+                <div class="diamond-content text-black font-bold">T</div>
+              </div>
+              <span class="text-2xl font-black orbitron neon-cyan">TECHLINE</span>
+            </div>
+            
+            <!-- Menu -->
+            <ul class="hidden md:flex space-x-8 text-blue-500 font-bold orbitron">
+            <li><a href="#inicio" class="hover:text-orange-400 transition duration-300 relative group">
+                ▶ INICIO
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+            <li><a href="#nosotros" class="hover:text-orange-400 transition duration-300 relative group">
+                ▶ NOSOTROS
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#servicios" class="hover:text-orange-400 transition duration-300 relative group">
+                ▶ SERVICIOS
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#contacto" class="hover:text-orange-400 transition duration-300 relative group">
+                ▶ CONTACTO
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="max-w-7xl mx-auto px-6 py-20 mt-20">
+        <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+          
+          <!-- Left Content -->
+            <div class="text-center lg:text-left">
+            <div class="mb-8">
+              <h1 class="text-8xl md:text-9xl font-black orbitron glitch mb-4">
+                <span class="neon-cyan">TECH</span>
+                <br>
+                <span class="neon-pink">LINE</span>
+          </h1>
+              <div class="typewriter text-2xl md:text-3xl text-orange-400 font-bold">
+                SOLUCIONES TECNOLÓGICAS EMPRESARIALES
+              </div>
+              </div>
+              
+            <!-- Cyber Stats -->
+            <div class="grid grid-cols-2 gap-6 mb-12">
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-cyan mb-2 orbitron font-black">24/7</div>
+                <div class="text-gray-300">DISPONIBLE</div>
+                </div>
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-pink mb-2 orbitron font-black">100%</div>
+                <div class="text-gray-300">CONFIABLE</div>
+                </div>
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-yellow mb-2 orbitron font-black">IA</div>
+                <div class="text-gray-300">INTEGRADA</div>
+                </div>
+              <div class="cyber-card p-6 rounded-lg">
+                <div class="text-4xl neon-cyan mb-2 orbitron font-black">PRO</div>
+                <div class="text-gray-300">SOLUCIONES</div>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="cyber-card px-12 py-6 rounded-lg text-xl font-bold orbitron neon-cyan border-2 border-blue-500 hover:bg-blue-500 hover:text-black transition-all duration-300">
+              ▶ CONTACTAR AHORA
+            </button>
+          </div>
+
+          <!-- Right Content - Cyber Image -->
+            <div class="relative">
+            <div class="cyber-card p-8 rounded-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2125&q=80" 
+                alt="Tecnología empresarial avanzada" 
+                class="w-full h-96 object-cover rounded-lg"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-blue-500/20 via-transparent to-green-500/20 rounded-2xl"></div>
+              </div>
+            
+            <!-- Floating elements -->
+            <div class="absolute -top-6 -right-6 diamond pulse-neon">
+              <div class="diamond-content text-black font-bold">⚡</div>
+              </div>
+            <div class="absolute -bottom-6 -left-6 diamond pulse-neon" style="animation-delay: 1s;">
+              <div class="diamond-content text-black font-bold">🌙</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION - CIRCUIT BOARD DESIGN -->
+  <section id="nosotros" class="circuit-bg py-32 bg-gray-900 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+        <h2 class="text-6xl font-black orbitron neon-pink glitch mb-8">QUIÉNES SOMOS</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto"></div>
+      </div>
+      
+      <!-- Sliding panels layout -->
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Panel 1 -->
+        <div class="slide-panel p-8 rounded-lg">
+          <div class="slide-content">
+            <div class="diamond mb-6 mx-auto">
+              <div class="diamond-content text-black font-bold text-xl">🔮</div>
+            </div>
+            <h3 class="text-2xl font-bold orbitron neon-cyan mb-4">VISIÓN TECNOLÓGICA</h3>
+            <p class="text-gray-300">Revolucionamos la comunicación empresarial con soluciones tecnológicas integrales y de vanguardia.</p>
+          </div>
+        </div>
+        
+        <!-- Panel 2 -->
+        <div class="slide-panel p-8 rounded-lg" style="transform: skewX(5deg);">
+          <div class="slide-content">
+            <div class="diamond mb-6 mx-auto">
+              <div class="diamond-content text-black font-bold text-xl">🚀</div>
+            </div>
+            <h3 class="text-2xl font-bold orbitron neon-pink mb-4">INNOVACIÓN</h3>
+            <p class="text-gray-300">Fusionamos inteligencia artificial y experiencia humana para optimizar procesos empresariales.</p>
+            </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="slide-panel p-8 rounded-lg">
+          <div class="slide-content">
+            <div class="diamond mb-6 mx-auto">
+              <div class="diamond-content text-black font-bold text-xl">⚡</div>
+                </div>
+            <h3 class="text-2xl font-bold orbitron neon-yellow mb-4">EFICIENCIA</h3>
+            <p class="text-gray-300">Maximizamos la productividad empresarial con herramientas tecnológicas de última generación.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Central Image -->
+      <div class="flex justify-center mt-16">
+        <div class="cyber-card p-6 rounded-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Equipo profesional TECHLINE" 
+            class="w-full max-w-2xl h-64 object-cover rounded-lg"
+          />
+        </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- SERVICES SECTION - GRID CYBER DESIGN -->
+  <section id="servicios" class="bg-black py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-6xl font-black orbitron neon-cyan glitch mb-8">SERVICIOS TECHLINE</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-orange-400 to-blue-500 mx-auto"></div>
+      </div>
+      
+      <!-- Cyber Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">📞</div>
+            </div>
+            <img 
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Call center profesional" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-pink mb-4">CALL CENTER PROFESIONAL</h3>
+          <p class="text-gray-300 mb-4">Operaciones 24/7 con tecnología de última generación y personal altamente capacitado.</p>
+          <div class="flex items-center text-blue-500">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">ACTIVO 24/7</span>
+          </div>
+          </div>
+        
+        <!-- Service 2 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🎯</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80" 
+            alt="Ventas digitales profesionales" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-yellow mb-4">VENTAS DIGITALES</h3>
+          <p class="text-gray-300 mb-4">Estrategias de conversión potenciadas por IA, análisis predictivo y automatización inteligente.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">ROI MAXIMIZADO</span>
+          </div>
+      </div>
+      
+        <!-- Service 3 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🤖</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Soporte tecnológico con IA" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-cyan mb-4">SOPORTE IA</h3>
+          <p class="text-gray-300 mb-4">Mesa de ayuda automatizada con respuestas instantáneas y precisas.</p>
+          <div class="flex items-center text-blue-500">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">RESPUESTA INMEDIATA</span>
+          </div>
+          </div>
+          
+        <!-- Service 4 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">📊</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Analytics empresarial" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-pink mb-4">ANALYTICS EMPRESARIAL</h3>
+          <p class="text-gray-300 mb-4">Análisis de datos empresariales en tiempo real con dashboards interactivos y reportes personalizados.</p>
+          <div class="flex items-center text-green-500">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">DATOS EN VIVO</span>
+          </div>
+          </div>
+          
+        <!-- Service 5 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🔐</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Seguridad tecnológica empresarial" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-yellow mb-4">SEGURIDAD TECNOLÓGICA</h3>
+          <p class="text-gray-300 mb-4">Protección empresarial avanzada con encriptación de grado profesional.</p>
+          <div class="flex items-center text-orange-400">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">MÁXIMA SEGURIDAD</span>
+          </div>
+          </div>
+          
+        <!-- Service 6 -->
+        <div class="cyber-card p-8 rounded-2xl group">
+          <div class="diamond mb-6">
+            <div class="diamond-content text-black font-bold text-xl">🌐</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2134&q=80" 
+            alt="Conectividad empresarial global" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold orbitron neon-cyan mb-4">CONECTIVIDAD GLOBAL</h3>
+          <p class="text-gray-300 mb-4">Red mundial de comunicaciones sin interrupciones.</p>
+          <div class="flex items-center text-blue-500">
+            <span class="mr-2">▶</span>
+            <span class="text-sm font-bold">RED GLOBAL</span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- TESTIMONIALS - HOLOGRAPHIC DESIGN -->
+  <section class="cyber-bg py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-6xl font-black orbitron neon-pink glitch mb-8">TESTIMONIOS TECHLINE</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto"></div>
+            </div>
+      
+      <!-- Holographic testimonials -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="cyber-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-blue-500 mr-4" 
+              src="https://randomuser.me/api/portraits/women/32.jpg" 
+              alt="Elena Rodriguez"
+            />
+            <div>
+              <h4 class="font-bold orbitron neon-cyan text-lg">Elena Rodriguez</h4>
+              <p class="text-orange-400 text-sm">CEO TechFusion</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"TECHLINE transformó nuestra operación empresarial. Las soluciones tecnológicas son impresionantes."</p>
+              <div class="flex mt-4">
+            <span class="neon-yellow">★★★★★</span>
+              </div>
+            </div>
+
+        <div class="cyber-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-pink-400 mr-4" 
+              src="https://randomuser.me/api/portraits/men/42.jpg" 
+              alt="Marcus Chen"
+            />
+            <div>
+              <h4 class="font-bold orbitron neon-pink text-lg">Marcus Chen</h4>
+              <p class="text-orange-400 text-sm">CTO NightCorp</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"La eficiencia 24/7 superó todas nuestras expectativas. Revolución total."</p>
+              <div class="flex mt-4">
+            <span class="neon-yellow">★★★★★</span>
+              </div>
+            </div>
+
+        <div class="cyber-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-yellow-400 mr-4" 
+              src="https://randomuser.me/api/portraits/women/24.jpg" 
+              alt="Sofia Luna"
+            />
+            <div>
+              <h4 class="font-bold orbitron neon-yellow text-lg">Sofia Luna</h4>
+              <p class="text-orange-400 text-sm">Director DigitalFlow</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"La combinación de IA y factor humano es perfecta. Resultados excepcionales."</p>
+          <div class="flex mt-4">
+            <span class="neon-yellow">★★★★★</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  <!-- CONTACT FOOTER - CYBER TERMINAL -->
+  <footer id="contacto" class="bg-black text-white py-20 border-t-2 border-blue-500">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12 mb-16">
+        
+        <!-- Company Info -->
+        <div class="md:col-span-1">
+          <div class="flex items-center mb-8">
+            <div class="diamond mr-4 pulse-neon">
+              <div class="diamond-content text-black font-bold">T</div>
+            </div>
+            <h3 class="text-4xl font-bold orbitron neon-cyan">TECHLINE</h3>
+          </div>
+          <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+            Brindamos soluciones tecnológicas integrales para empresas, optimizando procesos y maximizando la eficiencia operativa.
+          </p>
+          <div class="flex space-x-4">
+            <div class="w-12 h-12 cyber-card rounded-full flex items-center justify-center">
+              <span class="neon-cyan">📱</span>
+            </div>
+            <div class="w-12 h-12 cyber-card rounded-full flex items-center justify-center">
+              <span class="neon-pink">💼</span>
+            </div>
+            <div class="w-12 h-12 cyber-card rounded-full flex items-center justify-center">
+              <span class="neon-yellow">🌐</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-2xl font-bold orbitron neon-pink mb-8">▶ CONEXIÓN DIRECTA</h4>
+          <div class="space-y-6 text-gray-300">
+            <div class="flex items-start space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">📍</div>
+              </div>
+              <span>Bolivar 6681, Mar Del Plata</span>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">📞</div>
+              </div>
+              <a href="tel:+5492235520297" class="hover:text-blue-500 transition text-lg font-bold orbitron">+5492235520297</a>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">✉️</div>
+              </div>
+              <span>contacto@techline.com</span>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="diamond">
+                <div class="diamond-content text-black text-xs">🆔</div>
+              </div>
+              <span>CUIL: 20226269089</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Operating Hours -->
+        <div>
+          <h4 class="text-2xl font-bold orbitron neon-yellow mb-8">▶ HORARIOS TECHLINE</h4>
+          <div class="space-y-4 text-gray-300">
+            <div class="cyber-card p-4 rounded-lg">
+              <p class="font-bold neon-cyan mb-2 orbitron">CALL CENTER</p>
+              <p>24/7 CONTINUO</p>
+            </div>
+            <div class="cyber-card p-4 rounded-lg">
+              <p class="font-bold neon-pink mb-2 orbitron">OFICINAS</p>
+              <p>Lun-Vie: 08:00-20:00</p>
+              <p>Sáb: 09:00-15:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t-2 border-blue-500 pt-12 text-center">
+        <div class="diamond mx-auto mb-6 pulse-neon">
+          <div class="diamond-content text-black font-bold">💎</div>
+        </div>
+        <p class="neon-cyan mb-3 text-xl font-bold orbitron">TECHLINE - SOLUCIONES TECNOLÓGICAS EMPRESARIALES</p>
+        <p class="text-gray-400">© 2024 Todos los derechos reservados | Diseñado en el futuro digital</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CYBER WHATSAPP BUTTON -->
+  <a 
+    href="https://wa.me/5492235520297?text=¡Hola%20TECHLINE!%20💻%20Me%20interesa%20conocer%20sus%20soluciones%20tecnológicas%20empresariales" 
+    target="_blank"
+    class="fixed bottom-8 right-8 whatsapp-cyber text-white p-6 rounded-full shadow-2xl z-50 transition-all duration-300 hover:scale-110 group"
+    aria-label="Contactar por WhatsApp"
+  >
+    <div class="relative">
+      <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+      </svg>
+      <!-- Cyber notification -->
+      <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-full flex items-center justify-center text-xs font-bold pulse-neon">
+        ▶
+      </div>
+    </div>
+  </a>
+
+</body>
+</html>
